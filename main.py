@@ -1,5 +1,5 @@
 import time
-from turtle import Screen
+from turtle import Screen, Turtle
 
 from ball import Ball
 from paddle import Paddle
@@ -10,6 +10,22 @@ screen.bgcolor("#000000")
 screen.setup(width=800, height=600)
 screen.title("Pong")
 screen.tracer(0)
+
+bar = Turtle()
+bar.color("#FFFFFF")
+bar.setheading(90)
+bar.hideturtle()
+bar.pensize(10)
+bar.penup()
+bar.goto(0, -285)
+bar.pendown()
+
+for i in range(15):
+    bar.forward(20)
+    bar.penup()
+    bar.forward(20)
+    bar.pendown()
+
 
 r_paddle = Paddle((350, 0))
 l_paddle = Paddle((-350, 0))
